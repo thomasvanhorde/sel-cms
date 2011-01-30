@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<coremessage>
+    <message id="MESS_USER_MAIL_EXIST">Votre email éxiste deja</message>
+    <message id="MESS_USER_REGISTER">Enregistrement éffectuée</message>
+    <message id="ERR_ANNONCE_ADD">Erreur lors de l'enregistrement de l'annonce</message>
+    <message id="ERR_TEST">Erreur de test</message>
+    <message id="ERR_TEST2">Erreur de test2</message>
+</coremessage>

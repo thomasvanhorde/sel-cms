@@ -1,0 +1,1 @@
+this is the layout folder, NOT VIEW folder !

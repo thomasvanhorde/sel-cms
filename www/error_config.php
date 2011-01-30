@@ -1,0 +1,1 @@
+Erreur de configuration, voir fichier www/inc/base.config.php
