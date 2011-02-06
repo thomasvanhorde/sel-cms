@@ -1,5 +1,7 @@
 <?php
 
+//var_dump($_SERVER);
+//exit();
 /*
  * Système MVC by Thomas VH.
  *

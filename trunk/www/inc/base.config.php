@@ -31,9 +31,8 @@ else
 
 
 // Defaut config
-
-Define_once('SYS_FOLDER','/');
-Define_once('ENGINE_URL','/myprojet/engine/')
+Define_once('SYS_FOLDER','www/');
+Define_once('ENGINE_URL','D:/localhost/sel-cms/trunk/engine/')
 
 
 // mysql://utilisateur:motdepasse@serveur/base_de_donnees
