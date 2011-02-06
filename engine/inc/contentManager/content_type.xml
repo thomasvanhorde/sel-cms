@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<contentType>
+    <type id="1">input</type>
+    <type id="2">textarea</type>
+    <type id="3">date</type>
+    <type id="4">media</type>
+</contentType>

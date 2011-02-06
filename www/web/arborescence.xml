@@ -1,3 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <arborescence>
+    <index>
+        <title>SelCMS</title>
+        <controller>home</controller>
+        <layout>home.tpl</layout>
+    </index>
+    <admin>
+        <title>Administrator interface</title>
+        <controller>admin</controller>
+        <layout>admin.tpl</layout>
+    </admin>
 </arborescence>

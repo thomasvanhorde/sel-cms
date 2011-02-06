@@ -50,6 +50,8 @@ define('LISTENER_POST_TODO', 'todo');
  * File info define
  */
 define('INFOS_XML_CORE_MESSAGE','coremessage.xml');
+define('INFOS_XML_CONTENT_TYPE','ContentManager/content_type.xml');
+define('INFOS_XML_CONTENT_STRUCT','ContentManager/content_struct.xml');
 define('INFOS_XML','arborescence.xml');
 define('INFOS_INDEX','index');
 define('INFOS_TITLE','title');
