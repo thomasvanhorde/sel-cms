@@ -2,7 +2,6 @@
 
 define('DEBUG', false);
 define('DEV', true);
-//die(print_r($_SERVER['SCRIPT_FILENAME']));
 
 Define_once('BDD_TYPE', 'mysql');
 Define_once('BDD_LOGIN', 'root');
