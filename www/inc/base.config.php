@@ -2,7 +2,7 @@
 
 define('DEBUG', false);
 define('DEV', true);
-
+//die(print_r($_SERVER['SCRIPT_FILENAME']));
 
 Define_once('BDD_TYPE', 'mysql');
 Define_once('BDD_LOGIN', 'root');
@@ -31,8 +31,17 @@ else
 
 
 // Defaut config
-Define_once('SYS_FOLDER','www/');
-Define_once('ENGINE_URL','D:/localhost/sel-cms/trunk/engine/')
+if($_SERVER['SCRIPT_FILENAME'] == 'D:/localhost/sel-cms/trunk/www/index.php'){ //Thomas
+	Define_once('SYS_FOLDER','www/');
+	Define_once('ENGINE_URL','D:/localhost/sel-cms/trunk/engine/');
+}
+
+if($_SERVER['SCRIPT_FILENAME'] == 'C:/wwwroot/CMS/www/index.php'){  // Killian
+    Define_once('SYS_FOLDER','/CMS/www/');
+    Define_once('ENGINE_URL','C:/wwwroot/CMS/engine/');
+}
+
+
 
 
 // mysql://utilisateur:motdepasse@serveur/base_de_donnees
