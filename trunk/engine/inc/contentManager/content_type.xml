@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 
 <contentType>
-    <type id="1">input</type>
-    <type id="2">textarea</type>
-    <type id="3">date</type>
-    <type id="4">media</type>
+    <type id="10">input</type>
+    <type id="20">textarea simple</type>
+    <type id="21">textarea wysiwyg</type>
+    <type id="30">date</type>
+    <type id="40">media</type>
 </contentType>

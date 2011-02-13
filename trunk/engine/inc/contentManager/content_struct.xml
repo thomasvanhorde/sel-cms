@@ -1,25 +1,15 @@
 <?xml version="1.0"?>
-
 <contentStruct>
-    <element id="1">
-        <name>Article</name>
+    
+    <element id="2">
+        <name>test</name>
         <description>lorem ipsum</description>
         <types>
-            <type refType="1">
+            <type refType="10">
                 <name>Titre</name>
+                <id>title</id>
                 <limit>60</limit>
-            </type>
-            <type refType="4">
-                <name>Image</name>
-            </type>
-            <type refType="2">
-                <name>Chapeau</name>
-                <limit>450</limit>
-            </type>
-            <type refType="2">
-                <name>Contenu</name>
-                <limit>0</limit>
             </type>
         </types>
     </element>
-</contentStruct>
+<element id="1"><name>Article</name><description>lorem ipsum</description><types><type refType="10"><name>Titre</name><id>title</id><limit>60</limit></type><type refType="40"><name>Image</name><id>picture</id></type><type refType="20"><name>Chapeau</name><id>strapline</id></type><type refType="21"><name>Content</name><id>content</id></type></types></element></contentStruct>
