@@ -6,6 +6,7 @@ Class home_controller {
 	}
 
 	function defaut(){
+        $bdd = Base::Load(CLASS_BDD);
 	}
 
 }

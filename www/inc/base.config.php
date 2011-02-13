@@ -19,7 +19,7 @@ define('GRAIN_SEL', 'b4d6g6hZrt4treD4hrt68kuyki65hr');
 define('ENCODE_METHOD', 'md5'); // sha1 | md5
 
 // Use OoCss, ex Tmargin auto create if use in html code
-Define_once('CSS_OBJECT',true);
+Define_once('CSS_OBJECT',false);
 
 // Use CSS Compressor
 if(DEV)

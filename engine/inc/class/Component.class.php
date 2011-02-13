@@ -11,7 +11,7 @@ Class Component {
 	var $_view;
 	var $_bdd;
 	function Component(){
-		$this->_bdd = Base::Load('Bdd');
+		$this->_bdd = Base::Load(CLASS_BDD);
 	}
 }
 

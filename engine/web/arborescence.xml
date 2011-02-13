@@ -25,4 +25,17 @@
             <method>disconnect</method>
         </disconnect>
     </ac_login>
+    <admin>
+        <title>Administrator interface</title>
+        <controller>admin</controller>
+        <layout>admin.tpl</layout>
+        <content-manager>
+            <structures>
+                <title>Gestion de structures</title>
+                <controller>admin</controller>
+                <method>structures</method>
+                <layout>admin.tpl</layout>
+            </structures>
+        </content-manager>
+    </admin>    
 </arborescence>
