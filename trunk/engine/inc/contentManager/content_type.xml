@@ -6,4 +6,5 @@
     <type id="21">textarea wysiwyg</type>
     <type id="30">date</type>
     <type id="40">media</type>
+    <type id="50">select</type>
 </contentType>
