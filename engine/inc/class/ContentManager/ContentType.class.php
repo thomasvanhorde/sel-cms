@@ -13,7 +13,7 @@ class ContentType {
     }
 
     function loadXml(){
-        return simplexml_load_file(ENGINE_URL.FOLDER_INC.INFOS_XML_CONTENT_TYPE, NULL, true);
+        return simplexml_load_file(ENGINE_URL.FOLDER_INC.FOLDER_CONTENT_MANAGER.INFOS_XML_CONTENT_TYPE, NULL, true);
     }
 
     function get(){

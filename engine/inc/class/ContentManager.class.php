@@ -24,6 +24,13 @@ class ContentManager {
         return $structures;
     }
 
+    function getStructAll($structID = false){
+        $structures =  $this->_struct->getAll();
+        if($structID)
+            $structures = $structures[$structID];
+        return $structures;
+    }
+
 }
 
 

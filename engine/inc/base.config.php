@@ -16,6 +16,7 @@ define('FOLDER_VIEW','view/');
 define('FOLDER_CACHE','cache/');
 define('FOLDER_THEME',SYS_FOLDER.'themes/');
 define('FOLDER_MEDIA_IMAGE',SYS_FOLDER.'media/images/');
+define('FOLDER_CONTENT_MANAGER','ContentManager/');
 
 /*
  * Template define
@@ -50,8 +51,8 @@ define('LISTENER_POST_TODO', 'todo');
  * File info define
  */
 define('INFOS_XML_CORE_MESSAGE','coremessage.xml');
-define('INFOS_XML_CONTENT_TYPE','ContentManager/content_type.xml');
-define('INFOS_XML_CONTENT_STRUCT','ContentManager/content_struct.xml');
+define('INFOS_XML_CONTENT_TYPE','content_type.xml');
+define('INFOS_XML_CONTENT_STRUCT','content_struct.xml');
 define('INFOS_XML','arborescence.xml');
 define('INFOS_INDEX','index');
 define('INFOS_TITLE','title');
@@ -69,5 +70,3 @@ define('INFOS_ACCESS_CONTROL_PASSWORD','password');
  */
 define('HTTP_HOST',$_SERVER['HTTP_HOST']);
 Define_once('CSS_COMPRESSOR',true);
-
-?>

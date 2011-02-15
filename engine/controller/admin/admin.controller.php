@@ -21,13 +21,21 @@ Class admin_controller {
     function structures(){
 
         if(isset($_GET['param'][0])){
-            $this->editStruct($_GET['param'][0]);
+            if($_GET['param'][0] == 'ajouter')  // Ajouter
+                $this->newStruct();
+            elseif($_GET['param'][0] == 'delete')  // Ajouter
+                $this->deleteStruct($_GET['param'][1]);
+            elseif($_GET['param'][0] == 'clone')  // Cloner
+                $this->cloneStruct($_GET['param'][1]);
+            else
+                $this->editStruct($_GET['param'][0]);   // Edit
         }
-        else {
+        else {      // List
             $data = array();
-            $struct = $this->_contentManager->getStruct();
-
+            $struct = $this->_contentManager->getStructAll();
+            
             foreach($struct as $idS => $strData){
+                $data[$idS]['locked'] = (string)$strData[@locked];
                 $data[$idS]['name'] = (string)$strData->name;
                 $data[$idS]['description'] = (string)$strData->description;
             }
@@ -38,15 +46,31 @@ Class admin_controller {
 
     }
 
+    function deleteStruct($uid){
+        $uid = $this->_contentManager->_struct->delete($uid);
+        header('location: '.$_SERVER['REDIRECT_URL'].'../../');
+        exit();
+    }
+
+    function newStruct(){
+        $type = $this->_contentManager->getType();
+        $this->_view->assign('typeList',$type);
+        $this->_view->addBlock('content', 'admin_ContentManager_structEdit.tpl');        
+    }
+
+    function cloneStruct($structID){
+        $this->_view->assign('clone',true);
+        $this->editStruct($structID);    
+    }
     function editStruct($structID){
         $data = array();
-        $struct = $this->_contentManager->getStruct($structID);
+        $struct = $this->_contentManager->getStructAll($structID);
         $type = $this->_contentManager->getType();
-    
+
         if(isset($struct->name))
-            $data['name'] = (string)$struct->name;
+            $data['name'] = utf8_decode((string)$struct->name);
         if(isset($struct->description))
-        $data['description'] = (string)$struct->description;
+        $data['description'] = utf8_decode((string)$struct->description);
         
         foreach($struct->types->type as $id => $d){
             foreach($d as $id2 => $d2)
@@ -56,6 +80,7 @@ Class admin_controller {
         }
 
 
+        $this->_view->assign('locked',$struct[@locked]);
         $this->_view->assign('structID',$structID);
         $this->_view->assign('struct',(array)$data);
         $this->_view->assign('typeList',$type);
@@ -64,11 +89,14 @@ Class admin_controller {
     }
 
     function POST_structEdit($data){
-        $this->_contentManager->_struct->save($data);
-        header('location: '.$_SERVER['REDIRECT_URL']);
+        $uid = $this->_contentManager->_struct->save($data);
+
+        if(isset($data['id']) && !empty($data['id']))
+            header('location: '.$_SERVER['REDIRECT_URL']);
+        else
+            header('location: '.$_SERVER['REDIRECT_URL'].'../'.$uid.'/');
+
         exit();
     }
 
 }
-
-?>

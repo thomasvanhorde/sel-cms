@@ -1,9 +1,14 @@
-<form method="post">
+[%if $locked == 'true' && $clone != 'true' %]
+    Structure verrouiller
+[%else %]
+
+[%if $clone == 'true' %]<h3>Edition d'un clone de [% $struct.name %]</h3>[%/if %]
+<form method="post" [%if $clone == 'true' %]action="../"[%/if %] >
     <input type="hidden" name="todo" value="admin[structEdit]" />
-    <input type="hidden" name="id" value="[% $structID %]"/>
+    <input type="hidden" name="id" value="[%if $clone != 'true' %][% $structID %][%else %][%/if %]"/>
 
     
-    <label>Nom</label><input name="name" type="text" value="[% $struct.name %]" />
+    <label>Nom</label><input name="name" type="text" value="[% $struct.name %][%if $clone == 'true' %] - clone[%/if %]" />
     <label>Description</label><textarea name="description">[% $struct.description %]</textarea>
 
     <strong>Elements</strong>
@@ -14,9 +19,11 @@
             <th>Label</th>
             <th>ID</th>
             <th>Type</th>
+            <th>Valeur(s)</th>
             <th>Limite</th>
             <th></th>
         </tr>
+        
 
         [%foreach from=$struct.data key=k item=element%]
             <tr>
@@ -39,6 +46,9 @@
                     </select>
                 </td>
                 <td>
+                    <input class="valeur" type="text" name="data[[%$k%]][valeur]" value="[% $element.type.valeur %]"/>
+                </td>
+                <td>
                     <input class="limit" type="text" name="data[[%$k%]][limit]" value="[% $element.type.limit %]" maxlength="3" size="3"/>
                 </td>
                 <td>
@@ -49,7 +59,9 @@
     </table>
 
 
-    <input type="button" value="Ajouter" onclick="addElement();"/>
+    <input type="button" value="Ajouter un champ" onclick="addElement();"/>
+
+    <br /><br />
     <input type="submit" name="register" value="Enregistrer" /> 
 
 </form>
@@ -70,7 +82,10 @@
             </select>
         </td>
         <td>
-            <input class="limit" type="text" nameTmp="data[keyId][limit]" maxlength="3" size="3"/>
+            <input class="valeur" type="text" nameTmp="data[keyId][valeur]" value=""/>
+        </td>
+        <td>
+            <input class="limit" type="text" nameTmp="data[keyId][limit]" maxlength="3" size="3" />
         </td>
         <td>
             <a href="#" onclick="deleteElement(this);return false;">x</a>
@@ -79,7 +94,7 @@
 </table>
 
 <script type="text/javascript">
-    var k = [%$k%];
+    var k = "[%$k%]";   // Last keyID
     function addElement(){
         k++;
         ElemenList = $('#elementList tr');
@@ -93,8 +108,7 @@
     }
     
     function deleteElement(elem){
-        elem = $(elem);
-        elem.parents('tr').fadeOut(400, function(){ $(this).remove()});
+        $(elem).parents('tr').fadeOut(400, function(){ $(this).remove()});
     }
 
     function lockLimit(){
@@ -112,3 +126,5 @@
     }
     lockLimit();
 </script>
+
+[%/if %]
