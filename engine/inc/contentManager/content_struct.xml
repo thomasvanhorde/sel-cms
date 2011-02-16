@@ -27,4 +27,11 @@
         </types>
     </element>
 
+
+
+
+
+
+<element id="calendrier" locked="true"><name>Calendrier</name><description>Liste d'évènements</description><types><type refType="10"><name>Titre</name><id>title</id><valeur></valeur><limit>40</limit></type><type refType="21"><name>Description</name><id>description</id><valeur></valeur></type><type refType="30"><name>Date</name><id>date</id><valeur></valeur></type></types></element>
+
 </contentStruct>

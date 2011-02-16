@@ -179,7 +179,7 @@ Class Base {
             // Liberation de mémoire
             unset($_POST[LISTENER_POST_TODO]);
 
-            Base::Load(CLASS_CONTROLLER,array($contr,CONTROLLER_POST_PREC.$method.'('.serialize($_POST).')'));
+            Base::Load(CLASS_CONTROLLER,array($contr,CONTROLLER_POST_PREC.$method.'#(#'.serialize($_POST).'#)#'));
         }
     }
 

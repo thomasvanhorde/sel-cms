@@ -17,10 +17,10 @@ class Controller {
 	function Controller($ControllerName = false, $method = false){
 		if($ControllerName) {
             // Gestion des paramètres de la méthode (facultatif)
-            $a = explode('(', $method);
+            $a = explode('#(#', $method);
             $method = $a[0];
             if(isset($a[1])){
-                $b = explode(')', $a[1]);
+                $b = explode('#)#', $a[1]);
                 $array = unserialize($b[0]);
             }
 
