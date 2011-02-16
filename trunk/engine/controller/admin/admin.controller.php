@@ -36,8 +36,8 @@ Class admin_controller {
             
             foreach($struct as $idS => $strData){
                 $data[$idS]['locked'] = (string)$strData[@locked];
-                $data[$idS]['name'] = (string)$strData->name;
-                $data[$idS]['description'] = (string)$strData->description;
+                $data[$idS]['name'] = utf8_decode((string)$strData->name);
+                $data[$idS]['description'] = utf8_decode((string)$strData->description);
             }
 
             $this->_view->assign('struct',$data);
@@ -71,12 +71,14 @@ Class admin_controller {
             $data['name'] = utf8_decode((string)$struct->name);
         if(isset($struct->description))
         $data['description'] = utf8_decode((string)$struct->description);
-        
-        foreach($struct->types->type as $id => $d){
-            foreach($d as $id2 => $d2)
-                $tmp[$id][$id2] = (string)$d2;
-            $tmp['structId'] = (string)$d[@refType];
-            $data['data'][] = $tmp;
+
+        if(count($struct->types) > 0){
+            foreach($struct->types->type as $id => $d){
+                foreach($d as $id2 => $d2)
+                    $tmp[$id][$id2] = (string)$d2;
+                $tmp['structId'] = (string)$d[@refType];
+                $data['data'][] = $tmp;
+            }
         }
 
 

@@ -62,7 +62,7 @@ class ContentStruct {
             }
         }
         else {  // else = new
-            $uid = 0;
+            $uid = 1;
             foreach($xmlArray as $k => $d){
                 if((string)$d[@id] >= $uid)
                     $uid = (string)$d[@id] + 1;
@@ -74,7 +74,7 @@ class ContentStruct {
         $newNode->addAttribute('locked', 'false');
         $newNode->addChild('name', $data['name']);
         $newNode->addChild('description', $data['description']);
-        $newNodeTypes = $newNode->addChild('types');
+        if(count($data['data']) > 0) $newNodeTypes = $newNode->addChild('types');
 
         foreach($data['data'] as $i => $d){
             $newNodeTypesType[$i] = $newNodeTypes->addChild('type');
