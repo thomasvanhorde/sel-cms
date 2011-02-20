@@ -14,7 +14,7 @@
  */
 define('CLASS_VUE','View');
 define('CLASS_BASE','Base');
-define('CLASS_BDD','Bdd');
+define('CLASS_BDD','BddMongoDB');
 define('CLASS_CORE_MESSAGE','Coremessage');
 define('CLASS_EMAIL','Email');
 define('CLASS_COMPONENT','Component');

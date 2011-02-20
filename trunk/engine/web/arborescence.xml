@@ -36,6 +36,12 @@
                 <method>structures</method>
                 <layout>admin.tpl</layout>
             </structures>
+            <contenus>
+                <title>Gestion de contenu</title>
+                <controller>admin</controller>
+                <method>contenus</method>
+                <layout>admin.tpl</layout>
+            </contenus>
         </content-manager>
     </admin>    
 </arborescence>

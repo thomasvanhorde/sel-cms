@@ -31,6 +31,10 @@ class ContentManager {
         return $structures;
     }
 
+    function getCollectioName($id){
+        return 'ContentManager_'.$id;
+    }
+
 }
 
 
