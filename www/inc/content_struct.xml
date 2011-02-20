@@ -3,4 +3,4 @@
 
 
 
-<element id="1" locked="false"><name>ghge</name><description>gergre ! (</description></element></contentStruct>
+<element id="1" locked="false"><name>ghge</name><description>gergre ! (</description><types><type refType="10"><name>test</name><id>test</id><valeur>buuu</valeur><limit/><index>true</index></type><type refType="10"><name>g</name><id>ger</id><valeur>rrrr</valeur><limit/><index>true</index></type></types></element><element id="2" locked="false"><name>Articles</name><description>Structure de base d'un article</description><types><type refType="10"><name>Titre</name><id>title</id><valeur></valeur><limit>70</limit><index>true</index></type><type refType="40"><name>Image</name><id>picture</id><valeur></valeur></type><type refType="20"><name>Chapeau</name><id>strapline</id><valeur>chp</valeur><index>true</index></type><type refType="21"><name>Corps du texte</name><id>content</id><valeur></valeur></type></types></element></contentStruct>

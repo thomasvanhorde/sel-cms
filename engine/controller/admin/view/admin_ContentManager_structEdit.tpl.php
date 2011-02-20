@@ -21,6 +21,7 @@
             <th>Type</th>
             <th>Valeur(s)</th>
             <th>Limite</th>
+            <th>Index</th>
             <th></th>
         </tr>
         
@@ -50,6 +51,9 @@
                 </td>
                 <td>
                     <input class="limit" type="text" name="data[[%$k%]][limit]" value="[% $element.type.limit %]" maxlength="3" size="3"/>
+                </td>
+                <td>
+                    <input type="checkbox" name="data[[%$k%]][index]" value="true" [% if $element.type.index =="true" %]checked="checked"[%/if%] />
                 </td>
                 <td>
                     <a href="#" onclick="deleteElement(this);return false;">x</a>
